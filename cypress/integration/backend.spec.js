@@ -24,24 +24,24 @@ describe ('Should test at a funcional level', () => {
       }).its('body.token').should('not.be.empty')
       .then(token => {    
         cy.request({
-              url:'https://barrigarest.wcaquino.me/contas', 
+              url:'https://barrigarest.wcaquino.me/contas',  
               method: 'POST',
-              headers:{ Authorization: 'bearer ${token}' } ,     
+              headers:{ Authorization: `JWT ${token}` } ,       
               body: {  
-                nome:'Conta para saldo' 
+                nome:'TESTE123' 
                } 
          }).as('response')
 
       })  
       cy.get('@response').then(res =>{
           expect(res.status).to.be.equal(201)
-          expect(res.status).to.have.property('id')
-          expect(res.status).to.have.property('nome','Conta para saldo')
-      })
-    })   
+          expect(res.body).to.have.property('id')
+          expect(res.body).to.have.property('nome', 'TESTE123')
+      }) 
+      })   
 
 
-    it ('Should upadate an account', () => {
+    it ('Should upadate an account', () => { 
 
         
     })
