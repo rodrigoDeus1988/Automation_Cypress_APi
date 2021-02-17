@@ -2,27 +2,22 @@
 
 
 describe ('Should test at a funcional level', () => {
-    before(() => {
+    let token
 
+    before(() => {
+      cy.getToken('a@a','a') 
+      .then(tkn => { 
+        token = tkn  
+      }) 
     })
     
     beforeEach(() => {
- 
+       cy.resetRest() 
     }) 
 
 
     it('Should create an account', () => {
-      cy.request({
-          method: 'POST',
-          url:'https://barrigarest.wcaquino.me/signin', 
-          body:{
-              email: "a@a",    
-              redirecionar: false,  
-              senha: "a"  
-          } 
-
-      }).its('body.token').should('not.be.empty')
-      .then(token => {    
+      
         cy.request({
               url:'https://barrigarest.wcaquino.me/contas',  
               method: 'POST',
@@ -32,19 +27,13 @@ describe ('Should test at a funcional level', () => {
                } 
          }).as('response')
 
-      })  
-      cy.get('@response').then(res =>{
+         cy.get('@response').then(res =>{
           expect(res.status).to.be.equal(201)
           expect(res.body).to.have.property('id')
           expect(res.body).to.have.property('nome', 'TESTE123')
       }) 
-      })   
 
-
-    it ('Should upadate an account', () => { 
-
-        
-    })
-
-}) 
+  
+    }) 
+})   
 
