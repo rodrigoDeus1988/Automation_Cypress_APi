@@ -27,7 +27,7 @@
     Cypress.Commands.add('getToken',(user,passwd) => {
         cy.request({
             method: 'POST',
-            url:'https://barrigarest.wcaquino.me/signin', 
+            url:'/signin', 
             body:{
                 email: user,    
                 redirecionar: false,   
@@ -47,7 +47,7 @@
 
             cy.request({
                 method: 'GET',
-                url:'https://barrigarest.wcaquino.me/reset', 
+                url:'/reset', 
                 headers:{ Authorization: `JWT ${token}` }  
                 
              }) 

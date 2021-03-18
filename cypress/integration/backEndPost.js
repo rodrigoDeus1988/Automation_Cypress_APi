@@ -19,7 +19,7 @@ describe ('Should test at a funcional level', () => {
     it('Should create an account', () => {
       
         cy.request({
-              url:'https://barrigarest.wcaquino.me/contas',  
+              url:'/contas',  
               method: 'POST',
               headers:{ Authorization: `JWT ${token}` } ,       
               body: {  
