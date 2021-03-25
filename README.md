@@ -1,3 +1,6 @@
+# Comando para instalação
+npm install cypress
+
 # Comando para executar cypress
 npm run cypress:run
 
