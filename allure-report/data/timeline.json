@@ -2,26 +2,26 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "children" : [ {
     "name" : "Busca uma lista de declarações",
-    "uid" : "632aa290da43622e",
+    "uid" : "6f7fdf4071aaeedc",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1624905146649,
-      "stop" : 1624905148874,
-      "duration" : 2225
+      "start" : 1624911355003,
+      "stop" : 1624911356978,
+      "duration" : 1975
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "Busca uma lista de declarações",
-    "uid" : "ba2115a051415f94",
+    "uid" : "5899f436e8fe01b4",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1624905144826,
-      "stop" : 1624905146639,
-      "duration" : 1813
+      "start" : 1624911353599,
+      "stop" : 1624911354992,
+      "duration" : 1393
     },
     "flaky" : false,
     "newFailed" : false,

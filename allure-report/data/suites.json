@@ -4,13 +4,13 @@
     "name" : "Consultar Cartão Tsys",
     "children" : [ {
       "name" : "Busca uma lista de declarações",
-      "uid" : "632aa290da43622e",
+      "uid" : "6f7fdf4071aaeedc",
       "parentUid" : "0880ae16e6b5a006193735a1e8b23ee0",
       "status" : "passed",
       "time" : {
-        "start" : 1624905146649,
-        "stop" : 1624905148874,
-        "duration" : 2225
+        "start" : 1624911355003,
+        "stop" : 1624911356978,
+        "duration" : 1975
       },
       "flaky" : false,
       "newFailed" : false,

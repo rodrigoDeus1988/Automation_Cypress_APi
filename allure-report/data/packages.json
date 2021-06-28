@@ -2,13 +2,13 @@
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
   "children" : [ {
     "name" : "Busca uma lista de declarações",
-    "uid" : "632aa290da43622e",
+    "uid" : "6f7fdf4071aaeedc",
     "parentUid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
     "status" : "passed",
     "time" : {
-      "start" : 1624905146649,
-      "stop" : 1624905148874,
-      "duration" : 2225
+      "start" : 1624911355003,
+      "stop" : 1624911356978,
+      "duration" : 1975
     },
     "flaky" : false,
     "newFailed" : false,
