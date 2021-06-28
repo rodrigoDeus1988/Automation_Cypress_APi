@@ -1,0 +1,11 @@
+[ {
+  "uid" : "632aa290da43622e",
+  "name" : "Busca uma lista de declarações",
+  "time" : {
+    "start" : 1624905146649,
+    "stop" : 1624905148874,
+    "duration" : 2225
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

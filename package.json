@@ -5,13 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open":"cypress open", 
-    "cypress:run":"cypress run" 
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:reporter": "cypress run --reporter mochawesome"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^3.6.0"
+    "brew": "0.0.8",
+    "cypress": "^7.5.0",
+    "cypress-mochawesome-reporter": "^2.2.0"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.8.3",
+    "allure-commandline": "^2.13.8",
+    "mocha-allure-reporter": "^1.4.0"
   }
 }

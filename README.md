@@ -5,4 +5,13 @@ npm install cypress
 npm run cypress:run
 
 # Comando para executar por integration
-npm run cypress:run -- --spec cypress/integration/backEndPost.js
+npm run cypress:run -- --spec cypress/integration/getTsys.spec.js
+
+# Comando para executar allure report
+npx cypress run --config video=false --env allure=true
+
+# Comando para gerar os resultados de testes
+allure generate allure-results
+
+# Comando para gerar arquivo em html
+allure open allure-report

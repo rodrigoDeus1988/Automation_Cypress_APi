@@ -1,0 +1,22 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "Consultar Cartão Tsys",
+    "children" : [ {
+      "name" : "Busca uma lista de declarações",
+      "uid" : "632aa290da43622e",
+      "parentUid" : "0880ae16e6b5a006193735a1e8b23ee0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1624905146649,
+        "stop" : 1624905148874,
+        "duration" : 2225
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "0880ae16e6b5a006193735a1e8b23ee0"
+  } ],
+  "name" : "suites"
+}
