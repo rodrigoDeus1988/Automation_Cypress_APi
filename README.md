@@ -1,17 +1,28 @@
-### Comando para instalação
-npm install cypress
+# Cypress-Rest-APi
 
-### Comando para executar cypress
+### Para configurar o Ambiente:
+
+1 - Instalar Node.js.
+
+2 - Escolher uma IDE de JavaScript para programar.
+
+3 - Instalar o Cypress com Cucumber executando o seguinte comando na raíz da pasta do seu projeto: 
+
+npm install
+
+## Para iniciar os testes, execute um dos seguintes comandos no terminal do VS Code:
+
+### Eexecutar cypress
 npm run cypress:run
 
 ### Comando para executar por integration
 npm run cypress:run -- --spec cypress/integration/getTsys.spec.js
 
-### Comando para executar allure sem gravaçaõ de video
+### Executar allure sem gravaçaõ de video
 npx cypress run --config video=false --env allure=true
 
-### Comando para gerar os resultados de testes
+### Gerar os resultados dos testes
 allure generate allure-results --clean
 
-### Comando para executar allure report
+### Allure report
 allure open allure-report
