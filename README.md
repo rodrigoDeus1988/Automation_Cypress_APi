@@ -6,7 +6,7 @@
 
 2 - Escolher uma IDE de JavaScript para programar.
 
-3 - Instalar o Cypress com Cucumber executando o seguinte comando na raíz da pasta do seu projeto: 
+3 - Instalar o Cypress executando o seguinte comando na raíz da pasta do seu projeto: 
 
 npm install
 
