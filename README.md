@@ -12,7 +12,7 @@ npm install
 
 ## Para iniciar os testes, execute um dos seguintes comandos no terminal do VS Code:
 
-### Eexecutar cypress
+### Execução do cypress
 npm run cypress:run
 
 ### Comando para executar por integration
