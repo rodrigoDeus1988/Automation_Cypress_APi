@@ -1,16 +1,18 @@
 {
-  "name": "piloto-cypress",
+  "name": "cypress-rest",
   "version": "1.0.0",
-  "description": "",
+  "description": "Framework de automação Cypress com rest-api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:reporter": "cypress run --reporter mochawesome"
+    "cypress:allureRun": "npx cypress run --config video=false --env allure=true",
+    "cypress:gererate": "allure generate allure-results --clean",
+    "cypress:allureReport": "allure open allure-report"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rodrigo Florindo de Deus",
   "license": "ISC",
   "dependencies": {
     "brew": "0.0.8",
