@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:allureRun": "npx cypress run --config video=false --env allure=true",
+    "cypress:allureRun": "npx cypress run --config video=false --env allure=true", 
     "cypress:gererate": "allure generate allure-results --clean",
-    "cypress:allureReport": "allure open allure-report"
+    "cypress:allureReport": "allure open allure-report" 
   },
   "keywords": [],
   "author": "Rodrigo Florindo de Deus",
