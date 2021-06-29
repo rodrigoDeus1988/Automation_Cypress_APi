@@ -11,7 +11,7 @@ npm run cypress:run -- --spec cypress/integration/getTsys.spec.js
 npx cypress run --config video=false --env allure=true
 
 # Comando para gerar os resultados de testes
-allure generate allure-results
+allure generate allure-results --clean
 
 # Comando para gerar arquivo em html
 allure open allure-report

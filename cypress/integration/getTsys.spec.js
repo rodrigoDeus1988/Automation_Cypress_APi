@@ -41,7 +41,7 @@ describe ('Consultar Cartão Tsys', () => {
 
     })
     
-    it('Busca uma lista de declarações', () => {
+    it('Busca declarações', () => {
       
         cy.request({
             method: 'GET', 
