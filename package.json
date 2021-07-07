@@ -7,21 +7,30 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:allureRun": "npx cypress run --config video=false --env allure=true", 
+    "cypress:allureRun": "npx cypress run --config video=false --env allure=true",
     "cypress:gererate": "allure generate allure-results --clean",
-    "cypress:allureReport": "allure open allure-report" 
+    "cypress:allureOpen": "allure open allure-report"
+    
   },
+  
   "keywords": [],
   "author": "Rodrigo Florindo de Deus",
   "license": "ISC",
   "dependencies": {
     "brew": "0.0.8",
-    "cypress": "^7.5.0",
     "cypress-mochawesome-reporter": "^2.2.0"
   },
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.8.3",
     "allure-commandline": "^2.13.8",
+    "cypress": "^7.7.0",
+    "cypress-cucumber-preprocessor": "^4.1.3",
     "mocha-allure-reporter": "^1.4.0"
-  }
+  },
+
+    "cypress-cucumber-preprocessor": {
+        "step_definitions": "cypress/support/steps"
+    }
 }
+  
+
