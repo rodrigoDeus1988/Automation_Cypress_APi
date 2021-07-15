@@ -18,6 +18,12 @@ npm run cypress:run
 ### Comando para executar por integration
 npm run cypress:run -- --spec cypress/integration/getTsys.spec.js
 
+### Instalação do modulo global na raiz Allure
+npm install -g allure-commandline --save-dev
+
+### Instalação modulo Allure Commandline
+npm install allure-commandline --save-dev
+
 ### Executar allure sem gravaçaõ de video
 npx cypress run --config video=false --env allure=true
 
