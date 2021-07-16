@@ -27,8 +27,8 @@ describe ('Consultar Cartão Tsys', () => {
               "access-control-expose-headers": "x-correlation-id, x-midway-correlation-id",
               "x-midway-correlation-id": "card-ee23a8a3-5d20-30f2-b927-6b55a9b6f35e",
               "accept": "application/json;charset=UTF-8",
-              "x-account-cpf": "50438099060",
-              "x-account-pan": "4077********1649" 
+              "x-account-cpf": "27430378811",
+              "x-account-pan": "4077********7988" 
              
               }
 
@@ -54,8 +54,8 @@ describe ('Consultar Cartão Tsys', () => {
               "transfer-encoding": "chunked",
               "connection": "keep-alive",
               "accept": "application/json;charset=UTF-8",
-              "x-account-cpf": "50438099060",
-              "x-account-pan": "4077********1649" 
+              "x-account-cpf": "27430378811",
+              "x-account-pan": "4077********7988"
              
               }
 
