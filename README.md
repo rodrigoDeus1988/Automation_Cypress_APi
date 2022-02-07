@@ -16,7 +16,7 @@ npm install
 npm run cypress:run
 
 ### Comando para executar por integration
-npm run cypress:run -- --spec cypress/integration/getTsys.spec.js
+npm run cypress:run -- --spec cypress/integration/consultaCNPJ.spec.js
 
 ### Instalação do modulo global na raiz Allure
 npm install -g allure-commandline --save-dev
