@@ -20,7 +20,6 @@ describe('Banco Digital Midway', () => {
 
             body: {
                 "password": "102030",
-                "documentNumber": "80286335875",
                 "hasLimit": true
             },
 
