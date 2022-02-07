@@ -20,15 +20,13 @@ describe('Banco Digital Midway', () => {
 
             body: {
                 "password": "102030",
-                "documentNumber":"80286335875",
+                "documentNumber": "80286335875",
                 "hasLimit": true
             },
 
             headers: {
-
                 "x-api-key": "UfICeQf7eY1jB9oKwtqJ6jxu33sdiha1FtJFpWsd",
                 "deviceId": "0558bbc48581453a",
-
             }
 
         }).as('response')
