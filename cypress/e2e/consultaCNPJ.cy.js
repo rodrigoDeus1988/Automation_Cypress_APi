@@ -6,10 +6,6 @@ describe ('Consulta CNPJ', () => {
 
     })
     
-    beforeEach(() => {
- 
-    })  
-
 
     it('Busca CNPJ', () => {
       
