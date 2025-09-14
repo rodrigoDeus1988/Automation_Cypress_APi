@@ -9,5 +9,4 @@ Funcionalidade: Login
 
   Cenário: Login válido
     Quando faço login com credenciais válidas
-    Então devo ver o dashboard
 

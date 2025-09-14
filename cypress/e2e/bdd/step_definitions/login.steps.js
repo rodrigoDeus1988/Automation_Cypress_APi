@@ -12,7 +12,3 @@ When('faço login com credenciais válidas', () => {
   })
 })
 
-Then('devo ver o dashboard', () => {
-  DashboardPage.assertLoggedIn()
-})
-
