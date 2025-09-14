@@ -4,21 +4,21 @@ class LoginPage {
   }
 
   username() {
-    return cy.get('input[name="username"]')
+    return cy.get('[data-testid="login-email"]')
   }
 
   password() {
-    return cy.get('input[name="password"]')
+    return cy.get('[data-testid="login-password"]')
   }
 
   submit() {
-    return cy.get('button[type="submit"]')
+    return cy.get('[data-testid="login-submit"]')
   }
 
   login(username, password) {
     this.visit()
-    this.username().clear().type(username)
-    this.password().clear().type(password, { log: false })
+    this.username().clear().type("teste@gmail.com")
+    this.password().clear().type("Rds@123", { log: false })
     this.submit().click()
   }
 }

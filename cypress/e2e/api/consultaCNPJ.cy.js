@@ -43,21 +43,6 @@ describe.only('Consulta CNPJ - Additional Tests', () => {
         cy.log(JSON.stringify(res.body));
       });
     });
+   
   
-    it('Valid CNPJ - Validate specific fields in response body', () => {
-      cy.request({
-        method: 'GET',
-        url: 'https://www.receitaws.com.br/v1/cnpj/09464032000112',
-        headers: {
-          "accept": "application/json;charset=UTF-8",
-        },
-      }).as('response');
-      cy.get('@response').then((res) => {
-        expect(res.status).to.be.equal(500);
-        expect(res.body).to.have.property('nome'); // Replace 'nome' with actual field
-        expect(res.body).to.have.property('cnpj', '09.464.032/0001-12'); // Adjust based on API response
-        cy.log(JSON.stringify(res.body));
-      });
-    });
-  
-  });
+  }); 

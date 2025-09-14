@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
-const { LoginPage, DashboardPage } = require('../../../pageObjects')
+const { LoginPage } = require('../../../pageObjects')
 
 Given('que estou na página de login', () => {
   LoginPage.visit()
@@ -7,7 +7,7 @@ Given('que estou na página de login', () => {
 
 When('faço login com credenciais válidas', () => {
   cy.fixture('users').then(({ valid }) => {
-    const { username, password } = valid
+  const { username, password } = valid
     LoginPage.login(username, password)
   })
 })
