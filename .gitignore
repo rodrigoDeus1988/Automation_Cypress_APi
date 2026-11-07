@@ -4,3 +4,5 @@ screenshots
 allure-report
 allure-results
 .png
+cypress.env.json
+cypress/downloads/

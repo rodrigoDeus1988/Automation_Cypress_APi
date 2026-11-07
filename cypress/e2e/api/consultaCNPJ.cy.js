@@ -1,48 +1,22 @@
-/// <reference types="cypress" />
+const cnpjs = require('../../fixtures/cnpjs.json')
 
-describe.only('Consulta CNPJ - Additional Tests', () => {
-  
-    it('Valid CNPJ - Should return status 200', () => {
-      cy.request({
-        method: 'GET',
-        url: 'https://www.receitaws.com.br/v1/cnpj/09464032000112',
-        headers: {
-          "accept": "application/json;charset=UTF-8",
-        },
-      }).as('response');
-      cy.get('@response').then((res) => {
-        expect(res.status).to.be.equal(200);
-        cy.log(JSON.stringify(res.body));
-      });
-    });
-  
-    it('Invalid CNPJ - Should return status 400 or error message', () => {
-      cy.request({
-        method: 'GET',
-        url: 'https://www.receitaws.com.br/v1/cnpj/00000000000000',
-        failOnStatusCode: false, // Prevent Cypress from failing the test
-        headers: {
-          "accept": "application/json;charset=UTF-8",
-        },
-      }).as('response');
-      cy.get('@response').then((res) => {
-        expect(res.status).to.be.equal(200);
-        //expect(res.body).to.have.property('message');
-        cy.log(JSON.stringify(res.body));
-      });
-    });
-  
-    it('Missing Header - Should return status 400 or error message', () => {
-      cy.request({
-        method: 'GET',
-        url: 'https://www.receitaws.com.br/v1/cnpj/09464032000112',
-        failOnStatusCode: false, // Prevent Cypress from failing the test
-      }).as('response');
-      cy.get('@response').then((res) => {
-        expect(res.status).to.be.equal(200);
-        cy.log(JSON.stringify(res.body));
-      });
-    });
-   
-  
-  }); 
+describe('ReceitaWS — contrato público de consulta CNPJ', () => {
+  it('retorna a empresa correspondente ao CNPJ válido', () => {
+    cy.consultaCnpj(cnpjs.valid).then(({ status, headers, body }) => {
+      expect(status).to.eq(200)
+      expect(headers['content-type']).to.include('application/json')
+      expect(body.status).to.eq('OK')
+      expect(body.cnpj).to.be.a('string')
+      expect(body.cnpj.replace(/\D/g, '')).to.eq(cnpjs.valid)
+      expect(body.nome).to.be.a('string').and.not.be.empty
+    })
+  })
+
+  it('retorna erro de negócio para CNPJ inválido', () => {
+    cy.consultaCnpj(cnpjs.invalid).then(({ status, body }) => {
+      expect(status).to.eq(400)
+      expect(body.status).to.eq('ERROR')
+      expect(body.message).to.be.a('string').and.not.be.empty
+    })
+  })
+})

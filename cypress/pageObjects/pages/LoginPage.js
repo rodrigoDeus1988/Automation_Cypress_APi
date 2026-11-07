@@ -1,27 +1,44 @@
+const locators = require('../locators/login.locators')
+
 class LoginPage {
+  get elements() {
+    return {
+      email: () => cy.get(locators.email),
+      password: () => cy.get(locators.password),
+      submit: () => cy.get(locators.submit),
+      errorMessage: () => cy.get(locators.errorMessage),
+    }
+  }
+
   visit() {
-    cy.visit(Cypress.env('webBaseUrl'))
+    const url = Cypress.env('loginPath') || Cypress.config('baseUrl')
+    if (!url) throw new Error('Configure baseUrl ou webBaseUrl para executar os testes web')
+    return cy.visit(url)
   }
 
-  username() {
-    return cy.get('[data-testid="login-email"]')
+  fillEmail(email) {
+    return this.elements.email().clear().type(email, {
+      log: false,
+      parseSpecialCharSequences: false,
+    })
   }
 
-  password() {
-    return cy.get('[data-testid="login-password"]')
+  fillPassword(password) {
+    return this.elements.password().clear().type(password, {
+      log: false,
+      parseSpecialCharSequences: false,
+    })
   }
 
   submit() {
-    return cy.get('[data-testid="login-submit"]')
+    return this.elements.submit().should('be.enabled').click()
   }
 
   login(username, password) {
-    this.visit()
-    this.username().clear().type("teste@gmail.com")
-    this.password().clear().type("Rds@123", { log: false })
-    this.submit().click()
+    this.fillEmail(username)
+    this.fillPassword(password)
+    return this.submit()
   }
 }
 
 module.exports = new LoginPage()
-

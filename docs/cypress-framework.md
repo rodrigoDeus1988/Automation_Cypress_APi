@@ -1,39 +1,14 @@
-# Cypress Web Testing Framework
+﻿# Convenções Cypress
 
-## Estrutura
-
-- cypress/e2e/web: testes por suíte (smoke, regression)
-- cypress/pageObjects: páginas e componentes reutilizáveis
-- cypress/support: comandos customizados e hooks globais
-- cypress/fixtures: dados estáticos de teste
-- cypress/utils: utilitários de suporte
-
-## Convenções
-
-- Nomes de spec: `featureName.behavior.cy.js`
-- POM: métodos sem asserts, asserts ficam no teste ou em páginas de validação
-- Seletores: priorizar `data-cy` para estabilidade
-
-## Variáveis de Ambiente
-
-- Definir `baseUrl` no `cypress.config.*` ou `webBaseUrl` em `cypress.env.json`
-- Exemplo: ver `cypress.env.example.json`
-
-## Scripts sugeridos (package.json)
-
-- `cypress:open`: `cypress open --e2e`
-- `cypress:run`: `cypress run --e2e --browser chrome`
-- `test:smoke`: `cypress run --e2e --spec cypress/e2e/web/smoke/**/*.cy.js`
-
-## Uso rápido
-
-1. Ajuste `cypress.env.json` com `webBaseUrl`
-2. Ajuste seletores em `LoginPage` e `DashboardPage`
-3. Rode `npm run cypress:open` e execute a spec de login
-
-## Próximos Passos
-
-- Adicionar reporter (Mochawesome/Allure)
-- Parametrizar ambiente por `--env` e CI
-- Adicionar comandos de autenticação por API
-
+- `pageObjects/locators/*.locators.js` concentra os seletores estáveis de cada tela, sem comandos Cypress.
+- `pageObjects/pages/*Page.js` importa os locators e expõe consultas e ações; asserções de negócio ficam nas specs/steps.
+- Steps e specs acessam os Page Objects pelo `pageObjects/index.js`, sem importar locators diretamente.
+- Ações retornam a cadeia Cypress. Navegação e preenchimento do login são separados.
+- `support/e2e.js` registra comandos e Allure uma única vez.
+- Configure ambiente antes da execução; não altere baseUrl em hooks globais.
+- Use `Cypress.env()` e valide variáveis obrigatórias antes das ações.
+- No BDD, o `Given` de navegação exige apenas a URL; o `When` de autenticação valida usuário e senha juntos; o `Then` de sucesso exige `loginSuccessPath`. Cenários de erro não dependem do destino de sucesso.
+- Não use `.only`, waits temporais, credenciais fixas nem supressão global de exceções.
+- Testes de API verificam HTTP e corpo; não registrem respostas completas com dados de empresas.
+- Fixtures guardam somente dados públicos de teste. A API real fica em suíte separada.
+- Detalhes de execução, variáveis, tipos dos comandos e limitações estão no README.

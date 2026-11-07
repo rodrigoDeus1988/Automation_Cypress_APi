@@ -1,12 +1,10 @@
-const { LoginPage, DashboardPage } = require('../../../pageObjects')
+const { loginCredentials, requiredEnv } = require('../../../utils/env')
 
-describe('Login Smoke', () => {
-  beforeEach(() => {
-    cy.fixture('users').as('users')
-  })
-
-  it('logs in with valid credentials', function () {
-    const { username, password } = this.users.valid
-    LoginPage.login(username, password)
+describe('Login smoke', () => {
+  it('redireciona o usuário autenticado para a página esperada', () => {
+    const { username, password } = loginCredentials()
+    const successPath = requiredEnv('loginSuccessPath')
+    cy.loginByForm(username, password)
+    cy.location('pathname').should('eq', successPath)
   })
 })
